@@ -4,8 +4,8 @@
 
 ## AUTEURS
 
-- Lucas Wautot
-- Nicolas Jamar Rodriguez
+- Luc Ntede Anegue
+- Roseline Maillard
 - Eléonore Vanderlinden
 - Laura Damien
 
