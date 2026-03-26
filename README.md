@@ -9,7 +9,6 @@
 
 Cours: LGEO2250 – Mesures de terrain en Géographie  
 Institution: UCLouvain – Earth and Life Institute
-Année académique : 2025–2026
 
 ## DESCRIPTION
 
