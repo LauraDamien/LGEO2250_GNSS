@@ -1,6 +1,4 @@
-# LGEO2250
-
-**Facteurs influençant le choix de destination Erasmus**
+# LGEO2250 – GNSS Terrain Survey (PPK)
 
 ## AUTEURS
 
