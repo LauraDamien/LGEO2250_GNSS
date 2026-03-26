@@ -11,41 +11,44 @@
 
 Cours: LGEO2250 – Mesures de terrain en Géographie  
 Institution: UCLouvain – Earth and Life Institute
+Année académique : 2025–2026
 
 ## DESCRIPTION
 
-Ce dépôt contient les données et scripts associés à une enquête visant à identifier les destinations Erasmus les plus populaires et les facteurs influençant ces préférences.
+Ce dépôt contient les données GNSS collectées lors du terrain à la Place Louis Pasteur, ainsi que les traitements effectués pour produire une cartographie précise du site. Les données ont été acquises à l’aide de deux récepteurs GNSS (base et rover) et traitées en Post-Processing Kinematic (PPK) afin d’améliorer la précision des positions.
 
-### Question de recherche
+### Objectif
 
-Quels facteurs influencent le choix de destination Erasmus chez les étudiants ?
-
+Réaliser une cartographie de la Place Louis Pasteur à l’aide de relevés GNSS et comparer la précision des positions obtenues avec et sans corrections (PPK).
 
 ## STRUCTURE DES FICHIERS
 
-`data_raw/`  
-`→ enquete_erasmus_raw.xlsx`  
-Export original du questionnaire (non modifié).
+data_raw/
+→ base_raw.ubx
+→ rover_raw.ubx
+Données GNSS brutes enregistrées sur le terrain (base et rover).
 
-`data_processed/`  
-`→ enquete_erasmus_clean.csv` 
-`→ enquete_erasmus_clean2.csv`  
-Données nettoyées utilisées pour l’analyse.
+data_processed/
+→ survey_raw.csv
+→ survey_corrected.csv
+Données de relevé GNSS avant et après corrections PPK.
 
-`scripts/`  
-`script_Erasmus.qmd`    
-Scripts permettant les analyses et les figures. 
+scripts/
+traitement_ppk
+Traitement des données réalisé avec Emlid Studio.
 
-`metadata`  
-`data_dictionary.csv`  
-`LICENSE.txt`
+metadata/
+metadata.md
+LICENSE.txt
 
 ## REPRODUCTION DES ANALYSES
 
 Les analyses peuvent être reproduites en :
-1. Chargeant data_processed/enquete_erasmus_clean.csv et data_processed/enquete_erasmus_clean2.csv
-2. Exécutant les scripts du dossier scripts/
-3. Toutes les figures présentées sont générées automatiquement lors de l’exécution des scripts situés dans le dossier scripts/.
+
+1. Chargeant les fichiers .ubx (base et rover)
+2. Effectuant le traitement PPK dans Emlid Studio
+3. Exportant le fichier CSV corrigé
+4. XXX
 
 ## CONFORMITÉ RGPD
 
@@ -53,8 +56,8 @@ Aucune donnée personnelle identifiable n’est incluse.
 
 ## CITATION DU JEU DE DONNÉES
 
-Wautot L., Jamar Rodriguez N., Vanderlinden E., Damien L. (2026).
-Erasmus Survey Dataset. UCLouvain.
+Ntede Anegue L., Maillard R., Vanderlinden E., Damien L. (2026).
+GNSS Survey Dataset – Place Louis Pasteur. UCLouvain
 
 Les métadonnées complètes du jeu de données sont disponibles dans :
 metadata/metadata.md
