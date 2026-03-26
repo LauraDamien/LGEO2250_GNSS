@@ -20,23 +20,22 @@ Réaliser une cartographie de la Place Louis Pasteur à l’aide de relevés GNS
 
 ## STRUCTURE DES FICHIERS
 
-data_raw/
-→ base_raw.ubx
-→ rover_raw.ubx
+`data_raw/`
+`→ base_raw.ubx`
+`→ rover_raw.ubx`
 Données GNSS brutes enregistrées sur le terrain (base et rover).
 
-data_processed/
-→ survey_raw.csv
-→ survey_corrected.csv
+`data_processed/`
+`→ survey_raw.csv`
+`→ survey_corrected.csv`
 Données de relevé GNSS avant et après corrections PPK.
 
-scripts/
-traitement_ppk
+`scripts/`
+`→ traitement_ppk`
 Traitement des données réalisé avec Emlid Studio.
 
-metadata/
-metadata.md
-LICENSE.txt
+`metadata.md`
+`LICENSE.txt`
 
 ## REPRODUCTION DES ANALYSES
 
