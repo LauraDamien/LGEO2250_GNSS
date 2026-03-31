@@ -12,7 +12,7 @@
 
 **Date de création du jeu de données :** 11/03/2026 (08h30–10h30)
 **Institution :** UCLouvain - École de Géographie  
-**Campagne d’échantillonnage :** Relevé GNSS, Place Louis Pasteur (Louvain-la-Neuve)
+**Campagne d’échantillonnage :** Relevé GNSS, Place Louis Pasteur (Louvain-la-Neuve)\
 **Type de ressource :** Jeu de données géospatiales (GNSS)  
 **Version :** 1.0  
 
@@ -47,7 +47,7 @@ Les points comprennent :
 - Rover monté sur perche maintenue verticale  
 - Acquisition via **Emlid Flow**  
 - Suivi du nombre de satellites visibles  
-- Mode de collecte : **averaging (5 secondes par point)**  
+- Mode de collecte : averaging (5 secondes par point)
 
 ---
 
@@ -94,19 +94,19 @@ Les points comprennent :
 
 ## 6. Traitements effectués
 
-- Post-traitement cinématique (**PPK**) avec **Emlid Studio**  
+- Post-traitement cinématique (PPK) avec **Emlid Studio**  
 - Le traitement repose sur l’utilisation des données de la      station de base et du rover afin de corriger les erreurs de positionnement :
   - Atmosphériques (ionosphère, troposphère)  
   - Horloges satellites  
   - Orbites satellites  
 
 - Paramétrage :
-  - Mode : **Stop and Go**  
-  - Elevation mask : **20° (au lieu de 15°)**  
+  - Mode : Stop and Go
+  - Elevation mask : 20° (au lieu de 15°) 
 
 - Filtrage :
-  - Conservation des solutions **fix** et **float**  
-  - Exclusion des solutions **single**  
+  - Conservation des solutions fix et float  
+  - Exclusion des solutions single 
 
 ---
 
