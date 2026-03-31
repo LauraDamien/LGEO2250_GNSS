@@ -44,7 +44,8 @@ Les analyses peuvent être reproduites en :
 1. Chargeant les fichiers .ubx (base et rover)
 2. Effectuant le traitement PPK dans Emlid Studio
 3. Exportant le fichier CSV corrigé
-4. XXX
+4. Exécutant les scripts du dossier scripts/
+5. Toutes les figures et l'analyse statistiques présentées sont générées automatiquement lors de l’exécution des scripts situés dans le dossier scripts/.
 
 ## CONFORMITÉ RGPD
 
