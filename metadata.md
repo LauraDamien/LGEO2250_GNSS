@@ -10,9 +10,9 @@
 - Roseline Maillard  
 - Éléonore Vanderlinden  
 
-**Date de création du jeu de données :** 11/03/2026 (08h30–10h30)
+**Date de création du jeu de données :** 11/03/2026 (08h30–10h30)  
 **Institution :** UCLouvain - École de Géographie  
-**Campagne d’échantillonnage :** Relevé GNSS, Place Louis Pasteur (Louvain-la-Neuve)\
+**Campagne d’échantillonnage :** Relevé GNSS, Place Louis Pasteur (Louvain-la-Neuve)  
 **Type de ressource :** Jeu de données géospatiales (GNSS)  
 **Version :** 1.0  
 
@@ -54,23 +54,43 @@ Les points comprennent :
 ## 4. Structure des fichiers
 
 ### Données brutes
-- **Fichier :** data_raw/base_station.ubx  
-  - Description : Données GNSS station de base  
 
-- **Fichier :** data_raw/rover.ubx  
-  - Description : Données GNSS rover  
+- **Base GNSS :**
+  - Dossier : `Base_GNSS/`  
+  - Contenu :
+    - Fichiers `.26O` : observations GNSS (principal pour PPK)  
+    - Fichiers `.26P`, `.26B` : données complémentaires GNSS  
+    - Fichiers `.RTCM3` : corrections GNSS  
+    - Fichiers `.LLH` : positions calculées  
 
-### Données traitées
-- **Fichier :** data_processed/points_corriges.csv  
-  - Description : Points GNSS corrigés (PPK)  
+- **Rover GNSS :**
+  - Dossier : `Rover_GNSS/`  
+  - Contenu :
+    - Fichiers `.ubx` : données GNSS brutes  
+    - Fichiers `.LLH` : positions calculées  
 
-- **Fichier :** data_processed/points_non_corriges.csv  
-  - Description : Points GNSS non corrigés  
+### Données d’arpentage
 
-**Format :** CSV  
-**Encodage :** UTF-8  
-**Séparateur :** Virgule (,)  
-**Valeurs manquantes :** cellules vides  
+- **Dossier :** `Arpentage/`
+
+#### Données non corrigées
+- `Arpentage/non_corrigées/transect_REL.csv`  
+- `Arpentage/non_corrigées/points_precis_REL.csv`  
+
+#### Données corrigées (PPK)
+- `Arpentage/corrigées/transect_REL_corrected.csv`  
+- `Arpentage/corrigées/points_precis_REL_corrected.csv`  
+
+### Scripts et environnement
+
+- `GNSS_project.R` : script R pour traitement, interpolation (IDW) et analyses  
+
+**Formats :**
+- RINEX (.26O,.26P,.26B)  
+- RTCM3  
+- UBX  
+- CSV  
+- LLH    
 
 ---
 
@@ -95,26 +115,32 @@ Les points comprennent :
 ## 6. Traitements effectués
 
 - Post-traitement cinématique (PPK) avec **Emlid Studio**  
-- Le traitement repose sur l’utilisation des données de la      station de base et du rover afin de corriger les erreurs de positionnement :
+- Correction des erreurs :
   - Atmosphériques (ionosphère, troposphère)  
   - Horloges satellites  
   - Orbites satellites  
 
 - Paramétrage :
-  - Mode : Stop and Go
-  - Elevation mask : 20° (au lieu de 15°) 
+  - Mode : Stop and Go  
+  - Elevation mask : 20° (au lieu de 15°)  
 
 - Filtrage :
   - Conservation des solutions fix et float  
-  - Exclusion des solutions single 
+  - Exclusion des solutions single  
+
+- Les fichiers `.26O` (RINEX) ont été utilisés comme entrée principale pour le PPK  
+
+- Les analyses (interpolation IDW, profils, statistiques) ont été réalisées sous R via le script fourni  
 
 ---
 
 ## 7. Interopérabilité
 
 **Formats utilisés :**
-- UBX  
+- RINEX  
 - CSV  
+- RTCM3  
+- UBX  
 
 **Logiciels compatibles :**
 - Emlid Studio  
@@ -140,7 +166,8 @@ Les données sont :
 
 - Structurées  
 - Nettoyées et filtrées  
-- Directement exploitables pour :
+- Reproductibles via script R  
+- Utilisables pour :
   - Cartographie  
   - Analyse topographique  
   - Interpolation spatiale  

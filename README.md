@@ -20,22 +20,24 @@ Réaliser une cartographie de la Place Louis Pasteur à l’aide de relevés GNS
 
 ## STRUCTURE DES FICHIERS
 
-`data_raw/`\
-`→ base_raw.ubx`\
-`→ rover_raw.ubx`\
-Données GNSS brutes enregistrées sur le terrain (base et rover).
+`Base_GNSS/`\
+`→ *.26O, *.26P, *.26B, *.RTCM3, *.LLH`\
+Données GNSS de la station de base.
 
-`data_processed/`\
-`→ survey_raw.csv`\
-`→ survey_corrected.csv`\
-Données de relevé GNSS avant et après corrections PPK.
+`Rover_GNSS/`\
+`→ *.ubx, *.LLH`\
+Données GNSS du rover.
 
-`scripts/`\
-`→ traitement_ppk`\
-Traitement des données réalisé avec Emlid Studio.
+`Arpentage/`\
+`→ non_corrigées/ (*.csv)`\
+`→ corrigées/ (*_corrected.csv)`\
+Données GNSS d’arpentage avant et après corrections PPK.
+
+`GNSS_project.R`\
+Script R pour traitement, interpolation (IDW) et analyses.
 
 `metadata.md`\
-`LICENSE.txt`
+`LICENSE`
 
 ## REPRODUCTION DES ANALYSES
 
@@ -45,7 +47,7 @@ Les analyses peuvent être reproduites en :
 2. Effectuant le traitement PPK dans Emlid Studio
 3. Exportant le fichier CSV corrigé
 4. Exécutant les scripts du dossier scripts/
-5. Toutes les figures et l'analyse statistiques présentées sont générées automatiquement lors de l’exécution des scripts situés dans le dossier scripts/.
+5. Toutes les figures et l'analyse statistiques présentées sont générées automatiquement lors de l’exécution de GNSS_project.R
 
 ## CONFORMITÉ RGPD
 
