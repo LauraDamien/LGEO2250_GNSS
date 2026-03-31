@@ -43,10 +43,10 @@ Script R pour traitement, interpolation (IDW) et analyses.
 
 Les analyses peuvent être reproduites en :
 
-1. Chargeant les fichiers .ubx (base et rover)
+1. Chargeant les fichiers (base *.26O et rover *.ubx)
 2. Effectuant le traitement PPK dans Emlid Studio
-3. Exportant le fichier CSV corrigé
-4. Exécutant les scripts du dossier scripts/
+3. Exportant le fichier CSV corrigé 
+4. Exécutant les scripts avec GNSS_project.R 
 5. Toutes les figures et l'analyse statistiques présentées sont générées automatiquement lors de l’exécution de GNSS_project.R
 
 ## CONFORMITÉ RGPD
